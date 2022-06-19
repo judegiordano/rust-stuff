@@ -1,3 +1,6 @@
+mod game;
+use crate::game::*;
+
 fn main() {
-    println!("Hello, world!");
+    init_game();
 }

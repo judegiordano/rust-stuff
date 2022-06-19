@@ -1,0 +1,29 @@
+name: CiCd
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+      # lint
+      - name: lint / format
+        uses: actions-rs/cargo@v1
+        with:
+          command: cargo fmt
+      # build
+      - name: build
+        uses: actions-rs/cargo@v1
+        with:
+          command: cargo build
+      # test
+      - name: test
+        uses: actions-rs/cargo@v1
+        with:
+          command: cargo test

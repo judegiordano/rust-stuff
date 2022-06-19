@@ -2,6 +2,7 @@
 rustup toolchain install nightly
 cargo init
 cargo --version
+cargo check
 cargo fmt
 cargo run
 cargo build

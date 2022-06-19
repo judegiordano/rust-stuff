@@ -18,14 +18,14 @@ jobs:
       - name: lint / format
         uses: actions-rs/cargo@v1
         with:
-          command: cargo fmt
+          command: fmt
       # build
       - name: build
         uses: actions-rs/cargo@v1
         with:
-          command: cargo build
+          command: build
       # test
       - name: test
         uses: actions-rs/cargo@v1
         with:
-          command: cargo test
+          command: test

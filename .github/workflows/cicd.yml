@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
       # lint
       - name: lint / format
         uses: actions-rs/cargo@v1

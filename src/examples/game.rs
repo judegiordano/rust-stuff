@@ -17,6 +17,7 @@ pub fn init_game() {
         let guess: u32 = guess.trim().parse::<u32>().expect("Please input a number");
 
         let result: &str = match guess.cmp(&secret_number) {
+            // each 'arm' of the match condition
             Less => "the number is higher!",
             Greater => "the number is lower!",
             Equal => {

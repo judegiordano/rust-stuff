@@ -8,5 +8,6 @@ fn main() {
     // shadowing::shadow();
     // game::init_game();
     // math::operations();
-    data_types::types();
+    // data_types::types();
+    functions::top_level();
 }

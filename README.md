@@ -15,4 +15,5 @@ cargo add <package>
 cargo build --release
 cargo doc --open
 rustc src/main.rs
+rustc --explain <error code>
 ```

@@ -4,7 +4,7 @@ use std::io::stdin as input;
 use crate::utils::random::random_number;
 
 pub fn init_game() {
-    let secret_number: u32 = random_number();
+    let secret_number: u32 = random_number(0, 100);
     println!("guess the number!");
 
     loop {
@@ -14,18 +14,22 @@ pub fn init_game() {
         input().read_line(&mut guess).expect("Failed to read line");
 
         // shadow original variable with 'turbofish' syntax
-        let guess: u32 = guess.trim().parse::<u32>().expect("Please input a number");
+        let guess: u32 = match guess.trim().parse::<u32>() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("input a number between 1 and 100");
+                continue;
+            }
+        };
 
-        let result: &str = match guess.cmp(&secret_number) {
+        match guess.cmp(&secret_number) {
             // each 'arm' of the match condition
-            Less => "the number is higher!",
-            Greater => "the number is lower!",
+            Less => println!("The number is higher!"),
+            Greater => println!("The number is lower!"),
             Equal => {
                 println!("You win!");
                 break;
             }
         };
-
-        println!("{result}");
     }
 }

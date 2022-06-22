@@ -4,5 +4,9 @@ pub mod utils;
 pub use crate::examples::*;
 
 fn main() {
-    math::operations();
+    // range::range();
+    // shadowing::shadow();
+    // game::init_game();
+    // math::operations();
+    data_types::types();
 }

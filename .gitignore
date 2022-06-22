@@ -16,3 +16,4 @@ target/
 *.exe
 *.env
 !template.env
+*.log

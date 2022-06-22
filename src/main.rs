@@ -4,5 +4,5 @@ pub mod utils;
 pub use crate::examples::*;
 
 fn main() {
-    shadowing::shadow();
+    math::operations();
 }

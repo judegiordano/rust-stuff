@@ -2,6 +2,7 @@ pub mod examples;
 pub mod utils;
 
 pub use crate::examples::*;
+pub use crate::utils::*;
 
 fn main() {
     // range::range();
@@ -10,5 +11,7 @@ fn main() {
     // math::operations();
     // data_types::types();
     // functions::top_level();
-    control_flow::logic();
+    // control_flow::logic();
+    request::test();
+    // ownership::owner();
 }

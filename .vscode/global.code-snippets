@@ -1,0 +1,10 @@
+{
+    "Format Prinfln": {
+        "scope": "rust",
+        "description": "format println!",
+        "prefix": "print",
+        "body": [
+            "println!(\"{:#?}\", ${0});"
+        ]
+    }
+}

@@ -9,5 +9,6 @@ fn main() {
     // game::init_game();
     // math::operations();
     // data_types::types();
-    functions::top_level();
+    // functions::top_level();
+    control_flow::logic();
 }

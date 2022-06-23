@@ -1,39 +1,21 @@
-pub struct Request {
-    base_url: &'static str,
+use serde::{Deserialize, Serialize};
+
+use crate::utils::http_client::Request;
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Todo {
+    #[serde(rename = "userId")]
+    user_id: u32,
+    id: Option<u32>,
+    title: String,
+    completed: bool,
 }
 
-impl Request {
-    pub fn build_url(&mut self, path: Option<&str>) -> String {
-        match path {
-            None => String::from(self.base_url),
-            Some(endpoint) => {
-                let mut base: String = self.base_url.clone().to_owned();
-                base.push_str("/");
-                base.push_str(endpoint);
-                base
-            }
-        }
-    }
-
-    pub fn get(&mut self, path: Option<&str>) -> String {
-        self.build_url(path)
-    }
-
-    pub fn post(&mut self, path: Option<&str>) -> String {
-        self.build_url(path)
-    }
-}
-
-pub fn test() {
-    let mut a = Request {
+pub async fn get_todos() -> Result<(), reqwest::Error> {
+    let mut client = Request {
         base_url: "https://jsonplaceholder.typicode.com",
     };
-    {
-        let response = a.post(None);
-        println!("{:#?}", response);
-    }
-    {
-        let response = a.post(Some("subpath/endpoint"));
-        println!("{:#?}", response);
-    }
+    let response: Vec<Todo> = client.get(Some("todos")).await?;
+    println!("{:#?}", response);
+    Ok(())
 }

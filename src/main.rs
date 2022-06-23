@@ -4,7 +4,8 @@ pub mod utils;
 pub use crate::examples::*;
 pub use crate::utils::*;
 
-fn main() {
+#[tokio::main]
+async fn main() -> Result<(), reqwest::Error> {
     // range::range();
     // shadowing::shadow();
     // game::init_game();
@@ -12,6 +13,7 @@ fn main() {
     // data_types::types();
     // functions::top_level();
     // control_flow::logic();
-    request::test();
     // ownership::owner();
+    request::get_todos().await?;
+    Ok(())
 }

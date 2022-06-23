@@ -13,7 +13,7 @@ async fn main() -> Result<(), reqwest::Error> {
     // data_types::types();
     // functions::top_level();
     // control_flow::logic();
-    // ownership::owner();
-    request::get_todos().await?;
+    ownership::owner();
+    // request::get_todos().await?;
     Ok(())
 }

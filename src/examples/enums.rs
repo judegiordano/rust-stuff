@@ -82,10 +82,7 @@ pub fn value_in_cents(coin: &Coin) -> u8 {
 }
 
 pub fn none_matching(value: Option<&u8>) -> Option<u8> {
-    match value {
-        None => None,
-        Some(n) => Some(n + 1),
-    }
+    value.map(|n| n + 1)
 }
 
 #[derive(Debug)]

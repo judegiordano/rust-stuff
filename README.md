@@ -27,4 +27,6 @@ cargo build --release
 cargo doc --open
 cargo test
 cargo bench
+cargo clippy
+cargo clippy --fix
 ```

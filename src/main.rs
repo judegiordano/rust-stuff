@@ -18,7 +18,8 @@ async fn main() -> Result<(), reqwest::Error> {
     // control_flow::logic();
     // ownership::owner();
     // structs::structuring();
-    methods::implementation();
+    // methods::implementation();
+    enums::enums();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

@@ -54,7 +54,7 @@ pub fn structuring() {
     let unit_like_struct = AlwaysEqual;
 
     println!("unit like struct {:#?}", unit_like_struct);
-    let rectangle = Dimensions { 0: 10, 1: 20 };
+    let rectangle: Dimensions = Dimensions(10, 20);
     let rectangle_area = area(&rectangle);
     println!("area {:#?}", rectangle_area);
 

@@ -1,4 +1,5 @@
-use rand::Rng;
+extern crate rand as random;
+use random::Rng;
 
 pub fn random_number(lower: u32, upper: u32) -> u32 {
     // inclusive lower bound, exclusive upper bound

@@ -10,6 +10,11 @@
 
 ```sh
 rustup toolchain install nightly
+rustup component add clippy
+rustup show
+rustc src/main.rs
+rustc --explain <error code>
+cargo +nightly test
 cargo init
 cargo --version
 cargo check
@@ -20,6 +25,6 @@ cargo update
 cargo add <package>
 cargo build --release
 cargo doc --open
-rustc src/main.rs
-rustc --explain <error code>
+cargo test
+cargo bench
 ```

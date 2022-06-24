@@ -43,9 +43,9 @@ pub fn enums() {
     println!("not_null {:#?}", not_null);
     println!("null {:#?}", null);
     // catch all matching
-    let roll_one = catch_all(&1);
-    let roll_two = catch_all(&2);
-    let roll_three = catch_all(&3);
+    let roll_one = catch_all(1);
+    let roll_two = catch_all(2);
+    let roll_three = catch_all(3);
     println!("first roll rarity: {:#?}", roll_one);
     println!("second roll rarity: {:#?}", roll_two);
     println!("third roll rarity: {:#?}", roll_three);
@@ -94,7 +94,7 @@ pub enum Rarity {
     Rare,
 }
 
-pub fn catch_all(roll: &u8) -> Rarity {
+pub fn catch_all(roll: u8) -> Rarity {
     match roll {
         1 => Rarity::Rare,
         _ => Rarity::Common,

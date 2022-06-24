@@ -10,8 +10,8 @@ impl Request {
         match path {
             None => String::from(self.base_url),
             Some(endpoint) => {
-                let mut base: String = self.base_url.clone().to_owned();
-                base.push_str("/");
+                let mut base: String = (*self.base_url).to_string();
+                base.push('/');
                 base.push_str(endpoint);
                 base
             }

@@ -17,8 +17,10 @@ async fn main() -> Result<(), reqwest::Error> {
     // functions::top_level();
     // control_flow::logic();
     // ownership::owner();
-    structs::structuring();
+    // structs::structuring();
+    methods::implementation();
     // request::get_todos().await?;
+
     let duration: Duration = start.elapsed();
     println!("operation complete in {:#?}", duration);
     Ok(())

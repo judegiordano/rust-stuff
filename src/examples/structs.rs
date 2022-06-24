@@ -79,6 +79,7 @@ pub fn build_user(username: String, email: String) -> User {
 pub fn spread_syntax(user: User) {
     let spread_user = User {
         username: "override_username".to_string(),
+        // we now lose ownership of original user
         ..user
     };
     println!("spread user: {:#?}", spread_user);

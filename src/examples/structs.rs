@@ -1,8 +1,6 @@
-use serde::{Deserialize, Serialize};
-
 use crate::helpers::type_of;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug)]
 pub struct User {
     active: bool,
     username: String,
@@ -10,13 +8,22 @@ pub struct User {
     sign_in_count: u64,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
-pub struct Color(i32, i32, i32);
+#[derive(Debug)]
+pub struct Color(u32, u32, u32);
 
-#[derive(Debug, Serialize, Deserialize)]
-pub struct Point(i32, i32, i32);
+#[derive(Debug)]
+pub struct Point(u32, u32, u32);
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug)]
+pub struct Dimensions(u32, u32);
+
+#[derive(Debug)]
+pub struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+#[derive(Debug)]
 struct AlwaysEqual;
 
 pub fn structuring() {
@@ -30,6 +37,8 @@ pub fn structuring() {
     println!("user {:#?}", user);
     println!("user.active {:#?}", user.active);
     println!("user.username {:#?}", user.username);
+    println!("user.email {:#?}", user.email);
+    println!("user.sign_in_count {:#?}", user.sign_in_count);
     // mutate mutable struct
     user.username = String::from("new_username");
     println!("mutated user {:#?}", user);
@@ -43,7 +52,18 @@ pub fn structuring() {
     println!("{:#?} {:#?}", black, origin);
 
     let unit_like_struct = AlwaysEqual;
+
     println!("unit like struct {:#?}", unit_like_struct);
+    let rectangle = Dimensions { 0: 10, 1: 20 };
+    let rectangle_area = area(&rectangle);
+    println!("area {:#?}", rectangle_area);
+
+    let rectangle = Rectangle {
+        width: 30,
+        height: 50,
+    };
+    let rec_area = rect_area(&rectangle);
+    println!("rect area {:#?}", rec_area);
 }
 
 pub fn build_user(username: String, email: String) -> User {
@@ -62,4 +82,12 @@ pub fn spread_syntax(user: User) {
         ..user
     };
     println!("spread user: {:#?}", spread_user);
+}
+
+pub fn area(dimensions: &Dimensions) -> u32 {
+    dimensions.0 * dimensions.1
+}
+
+pub fn rect_area(dimensions: &Rectangle) -> u32 {
+    dimensions.width * dimensions.height
 }

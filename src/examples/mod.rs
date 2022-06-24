@@ -6,3 +6,4 @@ pub mod math;
 pub mod ownership;
 pub mod range;
 pub mod shadowing;
+pub mod structs;

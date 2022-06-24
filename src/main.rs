@@ -1,3 +1,5 @@
+use std::time::{Duration, Instant};
+
 pub mod examples;
 pub mod utils;
 
@@ -6,6 +8,7 @@ pub use crate::utils::*;
 
 #[tokio::main]
 async fn main() -> Result<(), reqwest::Error> {
+    let start: Instant = Instant::now();
     // range::range();
     // shadowing::shadow();
     // game::init_game();
@@ -13,7 +16,10 @@ async fn main() -> Result<(), reqwest::Error> {
     // data_types::types();
     // functions::top_level();
     // control_flow::logic();
-    ownership::owner();
+    // ownership::owner();
+    structs::structuring();
     // request::get_todos().await?;
+    let duration: Duration = start.elapsed();
+    println!("operation complete in {:#?}", duration);
     Ok(())
 }

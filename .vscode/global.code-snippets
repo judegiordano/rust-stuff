@@ -6,5 +6,29 @@
         "body": [
             "println!(\"{:#?}\", ${0});"
         ]
+    },
+    "Allow Dead Code Attriubte": {
+        "scope": "rust",
+        "description": "allow dead code attribute",
+        "prefix": "allow_dead_attr",
+        "body": [
+            "#[allow(dead_code)]"
+        ]
+    },
+    "Bench Attribute": {
+        "scope": "rust",
+        "description": "benchmark attribute",
+        "prefix": "bench_attr",
+        "body": [
+            "#[bench]"
+        ]
+    },
+    "Test Attribute": {
+        "scope": "rust",
+        "description": "test attribute",
+        "prefix": "test_attr",
+        "body": [
+            "#[test]"
+        ]
     }
 }

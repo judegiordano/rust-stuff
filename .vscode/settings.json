@@ -1,9 +1,12 @@
 {
-	"editor.formatOnSave": true,
-	"[rust]": {
-		"editor.formatOnSave": true,
-	},
-	"cSpell.words": [
-		"reqwest"
-	]
+  "editor.formatOnSave": true,
+  "[rust]": {
+    "editor.formatOnSave": true,
+  },
+  "cSpell.words": [
+    "reqwest"
+  ],
+  // "rust-analyzer.diagnostics.disabled": [
+  //   "unresolved-proc-macro"
+  // ]
 }

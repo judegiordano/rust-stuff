@@ -1,3 +1,4 @@
+use std::io::Result;
 use std::time::{Duration, Instant};
 
 pub mod examples;
@@ -7,7 +8,7 @@ pub use crate::examples::*;
 pub use crate::utils::*;
 
 #[tokio::main]
-async fn main() -> Result<(), reqwest::Error> {
+async fn main() -> Result<()> {
     let start: Instant = Instant::now();
     // range::range();
     // shadowing::shadow();

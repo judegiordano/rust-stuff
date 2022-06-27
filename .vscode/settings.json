@@ -6,7 +6,7 @@
   "cSpell.words": [
     "reqwest"
   ],
-  // "rust-analyzer.diagnostics.disabled": [
-  //   "unresolved-proc-macro"
-  // ]
+  "rust-analyzer.diagnostics.disabled": [
+    "unresolved-proc-macro"
+  ]
 }

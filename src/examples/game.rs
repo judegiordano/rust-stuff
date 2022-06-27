@@ -1,14 +1,12 @@
 use std::cmp::Ordering::{Equal, Greater, Less};
 use std::io::stdin as input;
 
-use crate::utils::random::random_number;
-
 // constants can be declared in global scope
 const LOWER_BOUND: u32 = 0;
 const UPPER_BOUND: u32 = 100;
 
 pub fn init_game() {
-    let secret_number: u32 = random_number(LOWER_BOUND, UPPER_BOUND);
+    let secret_number: u32 = crate::utils::random::random_number(LOWER_BOUND, UPPER_BOUND);
     println!("guess the number!");
 
     loop {

@@ -29,4 +29,5 @@ cargo test
 cargo bench
 cargo clippy
 cargo clippy --fix
+cargo new --lib <name>
 ```

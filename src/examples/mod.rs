@@ -13,4 +13,5 @@ pub mod range;
 pub mod shadowing;
 pub mod string;
 pub mod structs;
+pub mod traits_generics;
 pub mod vectors;

@@ -18,21 +18,6 @@ pub fn parse_env_variable<T: FromStr>(name: &str) -> T {
     let normalized: String = name.trim().to_uppercase().trim().to_string();
     let value: String = env::var(&normalized).expect(&format!("{} not set", &normalized));
     // parse data type
-    let result = value.parse::<T>();
-    match result {
-        Ok(data) => data,
-        Err(_) => {
-            println!("error parsing environment variable {:#?}", normalized);
-            panic!()
-        }
-    }
-}
-
-pub fn test<T: FromStr>(name: &str) -> T {
-    // get variable
-    let normalized: String = name.trim().to_uppercase().trim().to_string();
-    let value: String = env::var(&normalized).expect(&format!("{} not set", &normalized));
-    // parse data type
     match value.parse::<T>() {
         Ok(data) => data,
         Err(_) => {

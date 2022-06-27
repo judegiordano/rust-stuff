@@ -27,7 +27,8 @@ async fn main() -> Result<()> {
     // vectors::example();
     // string::example();
     // hash_maps::example();
-    panic::example();
+    // panic::example();
+    traits_generics::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

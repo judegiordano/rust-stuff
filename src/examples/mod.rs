@@ -9,5 +9,6 @@ pub mod methods;
 pub mod ownership;
 pub mod range;
 pub mod shadowing;
+pub mod string;
 pub mod structs;
 pub mod vectors;

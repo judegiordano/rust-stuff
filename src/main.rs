@@ -22,7 +22,8 @@ async fn main() -> Result<()> {
     // methods::implementation();
     // enums::enums();
     // if_let_control_flow::flow();
-    vectors::example();
+    // vectors::example();
+    string::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

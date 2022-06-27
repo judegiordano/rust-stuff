@@ -21,7 +21,8 @@ async fn main() -> Result<()> {
     // structs::structuring();
     // methods::implementation();
     // enums::enums();
-    if_let_control_flow::flow();
+    // if_let_control_flow::flow();
+    vectors::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

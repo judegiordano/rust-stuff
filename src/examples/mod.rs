@@ -10,3 +10,4 @@ pub mod ownership;
 pub mod range;
 pub mod shadowing;
 pub mod structs;
+pub mod vectors;

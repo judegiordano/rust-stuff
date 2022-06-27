@@ -3,6 +3,7 @@ pub mod data_types;
 pub mod enums;
 pub mod functions;
 pub mod game;
+pub mod hash_maps;
 pub mod if_let_control_flow;
 pub mod math;
 pub mod methods;

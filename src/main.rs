@@ -23,7 +23,8 @@ async fn main() -> Result<()> {
     // enums::enums();
     // if_let_control_flow::flow();
     // vectors::example();
-    string::example();
+    // string::example();
+    hash_maps::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

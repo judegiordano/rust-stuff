@@ -5,10 +5,12 @@ pub mod examples;
 pub mod utils;
 
 pub use crate::examples::*;
+pub use crate::utils::config::Config;
 pub use crate::utils::*;
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    // let configuration: Config = Config::new().expect("error parsing environment variables");
     let start: Instant = Instant::now();
     // range::range();
     // shadowing::shadow();
@@ -24,7 +26,8 @@ async fn main() -> Result<()> {
     // if_let_control_flow::flow();
     // vectors::example();
     // string::example();
-    hash_maps::example();
+    // hash_maps::example();
+    panic::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

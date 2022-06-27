@@ -8,6 +8,7 @@ pub mod if_let_control_flow;
 pub mod math;
 pub mod methods;
 pub mod ownership;
+pub mod panic;
 pub mod range;
 pub mod shadowing;
 pub mod string;

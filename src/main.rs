@@ -2,6 +2,7 @@ use std::io::Result;
 use std::time::{Duration, Instant};
 
 pub mod examples;
+pub mod tests;
 pub mod utils;
 
 pub use crate::examples::*;

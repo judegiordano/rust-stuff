@@ -30,4 +30,6 @@ cargo bench
 cargo clippy
 cargo clippy --fix
 cargo new --lib <name>
+# do not run tests with parallelism
+cargo test -- --test-threads=1
 ```

@@ -1,42 +1,33 @@
-pub fn example() {
-    let answer = find_largest_num();
-    println!("{:#?}", answer);
+use serde::{Deserialize, Serialize};
 
-    let list = [10, 100, 34, 67, 101];
+pub fn example() {
+    let list = vec![10, 100, 34, 67, 101];
     let answer = largest_abstraction(&list);
     println!("{:#?}", answer);
+
+    let char_list = vec!['y', 'm', 'a', 'q', 'z'];
+    let result = largest_abstraction(&char_list);
+    println!("The largest char is {}", result);
+
+    let tweet = Tweet::new(
+        "horse_ebooks",
+        "of course, as you probably already know, people",
+    );
+    println!("{:#?}", tweet);
+    println!("{:#?}", tweet.summarize());
+    println!("{:#?}", tweet.summarize_author());
+    notify(&tweet);
 }
 
-fn find_largest_num() -> i32 {
-    let arr = [10, 20, 50, 30];
-    let mut largest_num = arr[0];
-    for i in arr {
+fn largest_abstraction<T: PartialOrd>(list: &[T]) -> &T {
+    let mut largest_num = &list[0];
+    for i in list {
         if i > largest_num {
-            largest_num = i;
+            largest_num = &i;
         }
     }
     largest_num
 }
-
-fn largest_abstraction(list: &[u32]) -> u32 {
-    let mut largest_num = list[0];
-    for &i in list {
-        if i > largest_num {
-            largest_num = i;
-        }
-    }
-    largest_num
-}
-
-// fn largest_generic<T>(list: &[T]) -> T {
-//     let mut largest_num = list[0];
-//     for &i in list {
-//         if i > largest_num {
-//             largest_num = i;
-//         }
-//     }
-//     largest_num
-// }
 
 #[allow(dead_code)]
 struct Point<T> {
@@ -55,4 +46,58 @@ impl<T> Point<T> {
 struct MultiPoint<T, U> {
     x: T,
     y: U,
+}
+
+pub trait Summary {
+    fn summarize_author(&self) -> String;
+
+    fn summarize(&self) -> String {
+        format!("(Read more from {}...)", self.summarize_author())
+    }
+}
+
+pub struct NewsArticle {
+    pub headline: String,
+    pub location: String,
+    pub author: String,
+    pub content: String,
+}
+
+impl Summary for NewsArticle {
+    fn summarize(&self) -> String {
+        format!("{}, by {} ({})", self.headline, self.author, self.location)
+    }
+
+    fn summarize_author(&self) -> String {
+        format!("{}, by {} ({})", self.headline, self.author, self.location)
+    }
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+pub struct Tweet {
+    pub username: String,
+    pub content: String,
+    pub reply: bool,
+    pub retweet: bool,
+}
+
+impl Tweet {
+    pub fn new(username: &str, content: &str) -> Tweet {
+        Tweet {
+            username: String::from(username),
+            content: String::from(content),
+            reply: false,
+            retweet: false,
+        }
+    }
+}
+
+impl Summary for Tweet {
+    fn summarize_author(&self) -> String {
+        format!("@{}", self.username)
+    }
+}
+
+pub fn notify(item: &impl Summary) {
+    println!("Breaking news! {}", item.summarize());
 }

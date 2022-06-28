@@ -16,15 +16,11 @@ pub struct Config {
 pub fn parse_env_variable<T: FromStr>(name: &str) -> T {
     // get variable
     let normalized: String = name.trim().to_uppercase().trim().to_string();
-    let value: String = env::var(&normalized).expect(&format!("{} not set", &normalized));
+    let value: String = env::var(&normalized).unwrap_or_else(|_| panic!("{} not set", &normalized));
     // parse data type
-    match value.parse::<T>() {
-        Ok(data) => data,
-        Err(_) => {
-            println!("error parsing environment variable {:#?}", normalized);
-            panic!()
-        }
-    }
+    value
+        .parse::<T>()
+        .unwrap_or_else(|_| panic!("error parsing environment variable {}", &normalized))
 }
 
 impl Config {

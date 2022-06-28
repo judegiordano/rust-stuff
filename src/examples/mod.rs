@@ -5,6 +5,7 @@ pub mod functions;
 pub mod game;
 pub mod hash_maps;
 pub mod if_let_control_flow;
+pub mod lifetime;
 pub mod math;
 pub mod methods;
 pub mod ownership;

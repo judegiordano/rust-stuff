@@ -23,7 +23,7 @@ fn largest_abstraction<T: PartialOrd>(list: &[T]) -> &T {
     let mut largest_num = &list[0];
     for i in list {
         if i > largest_num {
-            largest_num = &i;
+            largest_num = i;
         }
     }
     largest_num

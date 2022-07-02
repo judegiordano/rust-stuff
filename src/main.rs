@@ -2,6 +2,7 @@ use std::io::Result;
 use std::time::{Duration, Instant};
 
 pub mod examples;
+pub mod grep;
 pub mod tests;
 pub mod utils;
 
@@ -30,7 +31,8 @@ async fn main() -> Result<()> {
     // hash_maps::example();
     // panic::example();
     // traits_generics::example();
-    lifetime::example();
+    // lifetime::example();
+    grep::tool::grep_cli();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

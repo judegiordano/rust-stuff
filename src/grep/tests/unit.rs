@@ -1,8 +1,7 @@
-#[allow(dead_code)]
-#[allow(unused_imports)]
+#![allow(dead_code)]
+#![allow(unused_imports)]
 //
 use crate::grep::lib::util::*;
-// use crate::grep::tool::*;
 
 #[cfg(test)]
 pub mod tests {

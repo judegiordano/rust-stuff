@@ -15,3 +15,12 @@ pub fn shadow() {
     let spaces: usize = spaces.len();
     print!("spaces ({spaces}) is now a number");
 }
+
+pub fn temp() {
+    let x: u8 = 1;
+    let y: &u8 = &x;
+    let x: u8 = *y;
+    {
+        let _ = x;
+    }
+}

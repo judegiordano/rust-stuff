@@ -32,4 +32,9 @@ cargo clippy --fix
 cargo new --lib <name>
 # do not run tests with parallelism
 cargo test -- --test-threads=1
+cargo test -- --show-output
+cargo test <specific_test_name>
+cargo test <partial_test_name>
+cargo test -- --ignored
+cargo test -- --include-ignored
 ```

@@ -11,7 +11,7 @@ pub fn hash(password: &str) -> String {
     password_hash
 }
 
-pub fn verify(password: &str, hash: &String) -> bool {
+pub fn verify(password: &str, hash: &str) -> bool {
     let parsed_hash: PasswordHash =
         PasswordHash::new(hash).unwrap_or_else(|_| panic!("error parsing hash"));
     // assert hash

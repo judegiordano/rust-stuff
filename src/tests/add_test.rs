@@ -12,6 +12,7 @@ pub fn i_throw_an_error() {
 mod tests {
     use super::*;
     use crate::structs::Rectangle;
+    use std::{thread, time};
 
     #[test]
     fn sum() {
@@ -59,5 +60,13 @@ mod tests {
     #[should_panic(expected = "im an error message")]
     fn should_throw() {
         i_throw_an_error();
+    }
+
+    #[test]
+    #[ignore]
+    fn expensive_test() {
+        // expensive operation
+        let five_seconds = time::Duration::from_secs(5);
+        thread::sleep(five_seconds);
     }
 }

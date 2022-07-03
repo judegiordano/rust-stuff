@@ -1,6 +1,9 @@
+use std::env;
+
 pub struct Config {
     pub query: String,
     pub filename: String,
+    pub ignore_case: bool,
 }
 
 impl Config {
@@ -10,6 +13,11 @@ impl Config {
         }
         let query: String = String::from(&args[1]);
         let filename: String = String::from(&args[2]);
-        Ok(Config { query, filename })
+        let ignore_case: bool = env::var("IGNORE_CASE").is_ok();
+        Ok(Config {
+            query,
+            filename,
+            ignore_case,
+        })
     }
 }

@@ -37,4 +37,5 @@ cargo test <specific_test_name>
 cargo test <partial_test_name>
 cargo test -- --ignored
 cargo test -- --include-ignored
+cargo run <arguments> > output.txt
 ```

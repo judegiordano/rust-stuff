@@ -33,7 +33,8 @@ async fn main() -> Result<()> {
     // traits_generics::example();
     // lifetime::example();
     // grep::tool::grep_cli();
-    closure::example();
+    // closure::example();
+    iterations::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

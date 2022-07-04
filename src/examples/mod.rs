@@ -1,3 +1,4 @@
+pub mod closure;
 pub mod control_flow;
 pub mod data_types;
 pub mod enums;

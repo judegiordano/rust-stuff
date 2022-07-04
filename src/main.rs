@@ -32,7 +32,8 @@ async fn main() -> Result<()> {
     // panic::example();
     // traits_generics::example();
     // lifetime::example();
-    grep::tool::grep_cli();
+    // grep::tool::grep_cli();
+    closure::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

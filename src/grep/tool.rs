@@ -1,4 +1,4 @@
-use std::env::args;
+use std::env;
 use std::process;
 
 use crate::grep::lib::util::*;
@@ -19,8 +19,7 @@ use crate::grep::types::structs::*;
 /// cargo run frog poem.txt
 /// ```
 pub fn grep_cli() {
-    let args: Vec<String> = args().collect::<Vec<String>>();
-    let config: Config = Config::new(&args).unwrap_or_else(|err| {
+    let config: Config = Config::new(env::args()).unwrap_or_else(|err| {
         eprintln!("Problem parsing arguments: {:#?}", err);
         process::exit(1);
     });

@@ -7,12 +7,17 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn new(args: &[String]) -> Result<Config, &'static str> {
-        if args.len() < 3 {
-            return Err("correct usage is: program.exe <text_slice> <filename>");
-        }
-        let query: String = String::from(&args[1]);
-        let filename: String = String::from(&args[2]);
+    pub fn new(mut args: impl Iterator<Item = String>) -> Result<Config, &'static str> {
+        // ignore first argument; program name
+        args.next();
+        let query: String = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a query string"),
+        };
+        let filename: String = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a file name"),
+        };
         let ignore_case: bool = env::var("IGNORE_CASE").is_ok();
         Ok(Config {
             query,

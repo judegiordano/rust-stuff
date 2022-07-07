@@ -36,7 +36,8 @@ async fn main() -> Result<()> {
     // closure::example();
     // iterations::example();
     // smart_pointers::example();
-    drop_trait::example();
+    // drop_trait::example();
+    threading::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

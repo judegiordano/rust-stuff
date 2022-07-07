@@ -18,5 +18,6 @@ pub mod shadowing;
 pub mod smart_pointers;
 pub mod string;
 pub mod structs;
+pub mod threading;
 pub mod traits_generics;
 pub mod vectors;

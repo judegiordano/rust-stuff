@@ -14,6 +14,7 @@ pub mod ownership;
 pub mod panic;
 pub mod range;
 pub mod shadowing;
+pub mod smart_pointers;
 pub mod string;
 pub mod structs;
 pub mod traits_generics;

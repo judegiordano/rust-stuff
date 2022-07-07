@@ -32,9 +32,10 @@ async fn main() -> Result<()> {
     // panic::example();
     // traits_generics::example();
     // lifetime::example();
-    grep::tool::grep_cli();
+    // grep::tool::grep_cli();
     // closure::example();
     // iterations::example();
+    smart_pointers::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

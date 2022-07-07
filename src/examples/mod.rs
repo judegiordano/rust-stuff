@@ -12,6 +12,7 @@ pub mod iterations;
 pub mod lifetime;
 pub mod math;
 pub mod methods;
+pub mod mutex;
 pub mod ownership;
 pub mod panic;
 pub mod range;

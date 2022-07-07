@@ -35,7 +35,8 @@ async fn main() -> Result<()> {
     // grep::tool::grep_cli();
     // closure::example();
     // iterations::example();
-    smart_pointers::example();
+    // smart_pointers::example();
+    drop_trait::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

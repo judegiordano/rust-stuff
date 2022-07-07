@@ -1,6 +1,7 @@
 pub mod closure;
 pub mod control_flow;
 pub mod data_types;
+pub mod drop_trait;
 pub mod enums;
 pub mod functions;
 pub mod game;

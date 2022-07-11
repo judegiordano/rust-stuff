@@ -6,6 +6,7 @@ pub mod drop_trait;
 pub mod enums;
 pub mod functions;
 pub mod game;
+pub mod gui;
 pub mod hash_maps;
 pub mod if_let_control_flow;
 pub mod iterations;

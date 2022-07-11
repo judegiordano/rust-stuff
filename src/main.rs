@@ -39,7 +39,8 @@ async fn main() -> Result<()> {
     // drop_trait::example();
     // threading::example();
     // channels::example();
-    mutex::example();
+    // mutex::example();
+    gui::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

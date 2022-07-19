@@ -40,7 +40,8 @@ async fn main() -> Result<()> {
     // threading::example();
     // channels::example();
     // mutex::example();
-    gui::example();
+    // gui::example();
+    blog::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

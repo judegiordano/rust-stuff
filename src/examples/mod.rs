@@ -1,3 +1,4 @@
+pub mod blog;
 pub mod channels;
 pub mod closure;
 pub mod control_flow;

@@ -1,3 +1,5 @@
+#[allow(clippy::module_inception)]
+
 pub mod gui {
     pub trait Draw {
         fn draw(&self);

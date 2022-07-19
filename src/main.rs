@@ -41,7 +41,8 @@ async fn main() -> Result<()> {
     // channels::example();
     // mutex::example();
     // gui::example();
-    blog::example();
+    // blog::example();
+    pattern_matching::example();
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

@@ -17,6 +17,7 @@ pub mod methods;
 pub mod mutex;
 pub mod ownership;
 pub mod panic;
+pub mod pattern_matching;
 pub mod range;
 pub mod shadowing;
 pub mod smart_pointers;

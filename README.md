@@ -30,6 +30,8 @@ cargo bench
 cargo clippy
 cargo clippy --fix
 cargo new --lib <name>
+cargo install cargo-audit
+cargo audit
 # do not run tests with parallelism
 cargo test -- --test-threads=1
 cargo test -- --show-output

@@ -4,6 +4,8 @@ use chrono::{self, Datelike, Weekday};
 pub fn example() {
     fav_color();
     conditional_loop();
+    match_literal();
+    match_name()
 }
 
 pub fn fav_color() {
@@ -28,7 +30,7 @@ pub fn fav_color() {
 }
 
 pub fn conditional_loop() {
-    let mut stack: Vec<u32> = Vec::new();
+    let mut stack: Vec<u32> = vec![];
     stack.push(1);
     stack.push(2);
     stack.push(3);
@@ -36,4 +38,21 @@ pub fn conditional_loop() {
     while let Some(top) = stack.pop() {
         println!("{:#?}", top);
     }
+
+    let v: Vec<char> = vec!['a', 'b', 'c'];
+    for (index, value) in v.iter().enumerate() {
+        println!("{:#?} at index {:#?}", value, index);
+    }
 }
+
+pub fn match_literal() {
+    let x = 1;
+    match x {
+        1 => println!("value is one"),
+        2 => println!("value is two"),
+        3 => println!("value is three"),
+        _ => println!("value is something else"),
+    }
+}
+
+pub fn match_name() {}

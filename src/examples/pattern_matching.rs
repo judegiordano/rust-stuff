@@ -10,6 +10,7 @@ pub fn example() {
     match_range();
     match_string_range();
     destructure_struct();
+    enum_destructuring();
 }
 
 pub fn fav_color() {
@@ -110,4 +111,33 @@ pub fn destructure_struct() {
         Point { x: 0, y } => println!("On the y axis at {}", y),
         Point { x, y } => println!("On neither axis: ({}, {})", x, y),
     }
+}
+
+#[allow(dead_code)]
+#[derive(Debug)]
+enum Message {
+    Quit,
+    Move { x: u32, y: u32 },
+    Write(String),
+    ChangeColor(u32, u32, u32),
+}
+
+impl Message {
+    fn command(&self) {
+        match self {
+            Message::Quit => println!("quit variant is void"),
+            Message::Move { x, y } => println!("move x {} and y {}", x, y),
+            Message::Write(text) => println!("text message {}", text),
+            Message::ChangeColor(r, g, b) => {
+                println!("change color to red {} green {} and blue {}", r, g, b)
+            }
+        }
+    }
+}
+
+pub fn enum_destructuring() {
+    let msg = Message::ChangeColor(1, 150, 255);
+    msg.command();
+    let msg = Message::Move { x: 2, y: 5 };
+    msg.command();
 }

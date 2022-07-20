@@ -5,7 +5,11 @@ pub fn example() {
     fav_color();
     conditional_loop();
     match_literal();
-    match_name()
+    match_name();
+    multiple_patterns();
+    match_range();
+    match_string_range();
+    destructure_struct();
 }
 
 pub fn fav_color() {
@@ -52,4 +56,58 @@ pub fn match_literal() {
     }
 }
 
-pub fn match_name() {}
+pub fn match_name() {
+    let x = Some(5);
+    let _y = 10;
+
+    match x {
+        Some(50) => println!("got 50"),
+        Some(_y) => println!("matches y {:#?}", _y),
+        _ => println!("got alternative value, {:#?}", x),
+    }
+}
+
+pub fn multiple_patterns() {
+    let x = 1;
+    match x {
+        1 | 2 => println!("received one or two"),
+        3 => println!("received 3"),
+        _ => println!("received {:#?}", x),
+    }
+}
+
+pub fn match_range() {
+    let x = 5;
+    match x {
+        1..=5 => println!("range was in range 1-5"),
+        _ => println!("value was {:#?}", x),
+    }
+}
+
+pub fn match_string_range() {
+    let x = 'c';
+    match x {
+        'a'..='j' => println!("letter was in range a-j"),
+        'k'..='z' => println!("letter was in range k-z"),
+        _ => println!("letter was {:#?}", x),
+    }
+}
+
+struct Point {
+    x: u32,
+    y: u32,
+}
+
+pub fn destructure_struct() {
+    let p = Point { x: 0, y: 7 };
+    // destructure and rename fields
+    let Point { x: a, y: b } = p;
+    assert_eq!(a, 0);
+    assert_eq!(b, 7);
+
+    match p {
+        Point { x, y: 0 } => println!("On the x axis at {}", x),
+        Point { x: 0, y } => println!("On the y axis at {}", y),
+        Point { x, y } => println!("On neither axis: ({}, {})", x, y),
+    }
+}

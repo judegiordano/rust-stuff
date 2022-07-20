@@ -18,8 +18,8 @@ mod tests {
         let password = "ILovePuppies1234*";
         let wrong_password = "ILovePuppies1234";
         let hashed_password = password::hash(password);
-        let verify = password::verify(password, &hashed_password.to_string());
-        let wrong_verify = password::verify(wrong_password, &hashed_password.to_string());
+        let verify = password::verify(password, &hashed_password);
+        let wrong_verify = password::verify(wrong_password, &hashed_password);
         assert_eq!(verify, true);
         assert_eq!(wrong_verify, false);
     }

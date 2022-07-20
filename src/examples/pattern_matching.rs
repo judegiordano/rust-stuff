@@ -30,10 +30,7 @@ pub fn fav_color() {
 }
 
 pub fn conditional_loop() {
-    let mut stack: Vec<u32> = vec![];
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
+    let mut stack: Vec<u32> = vec![1, 2, 3];
 
     while let Some(top) = stack.pop() {
         println!("{:#?}", top);

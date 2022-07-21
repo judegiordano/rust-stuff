@@ -11,6 +11,8 @@ pub fn example() {
     match_string_range();
     destructure_struct();
     enum_destructuring();
+    tuple_spread();
+    fizz_buzz();
 }
 
 pub fn fav_color() {
@@ -140,4 +142,32 @@ pub fn enum_destructuring() {
     msg.command();
     let msg = Message::Move { x: 2, y: 5 };
     msg.command();
+}
+
+pub fn tuple_spread() {
+    let numbers = (2, 4, 8, 16, 32);
+
+    match numbers {
+        (first, .., last) => {
+            println!("{}, {}", first, last);
+        }
+    }
+}
+
+pub fn fizz_buzz() {
+    for i in 1..=100 {
+        if i % 15 == 0 {
+            println!("fizzbuzz");
+            continue;
+        }
+        if i % 3 == 0 {
+            println!("fizz");
+            continue;
+        }
+        if i % 5 == 0 {
+            println!("buzz");
+            continue;
+        }
+        println!("{i}")
+    }
 }

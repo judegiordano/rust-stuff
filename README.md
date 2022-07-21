@@ -23,6 +23,8 @@ cargo run
 cargo build
 cargo update
 cargo add <package>
+cargo add <package>@<versionNumber>
+cargo add <package> --features <features>
 cargo build --release
 cargo doc --open
 cargo test

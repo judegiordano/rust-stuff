@@ -18,3 +18,7 @@ target/
 !template.env
 *.log
 rust-toolchain
+
+# sqlite
+test.db
+test.db-journal

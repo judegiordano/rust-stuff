@@ -3,10 +3,12 @@ use std::time::{Duration, Instant};
 
 pub mod examples;
 pub mod grep;
+pub mod sqlite;
 pub mod tests;
 pub mod utils;
 
 pub use crate::examples::*;
+pub use crate::sqlite::*;
 pub use crate::utils::config::Config;
 pub use crate::utils::*;
 
@@ -42,7 +44,8 @@ async fn main() -> Result<()> {
     // mutex::example();
     // gui::example();
     // blog::example();
-    pattern_matching::example();
+    // pattern_matching::example();
+    orm::prepare_server().await?;
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();

@@ -42,4 +42,6 @@ cargo test <partial_test_name>
 cargo test -- --ignored
 cargo test -- --include-ignored
 cargo run <arguments> > output.txt
+# diesel
+cargo install diesel_cli
 ```

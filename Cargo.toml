@@ -24,4 +24,3 @@ tokio = { version = "1", features = ["full"] }
 rusqlite = { version = "0.28.0", features = ["bundled"] }
 cuid = "1.2.0"
 actix-web = "4"
-r2d2 = "0.8.10"

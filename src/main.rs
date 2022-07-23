@@ -45,7 +45,7 @@ async fn main() -> Result<()> {
     // gui::example();
     // blog::example();
     // pattern_matching::example();
-    orm::prepare_server().await?;
+    server::prepare_server().await?;
     // request::get_todos().await?;
 
     let duration: Duration = start.elapsed();
